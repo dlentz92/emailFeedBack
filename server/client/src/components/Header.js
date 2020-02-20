@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux"
+import { Link } from "react-router-dom"
 import { Fragment } from 'react';
 import {
     Navbar, NavbarBrand, Nav, NavItem, NavLink
@@ -13,18 +14,19 @@ class Header extends Component {
             case null:
                 return;
             case false:
-                return <li><a href = "localhost:3000/auth/google"></a>Login with Google</li>
+                return <li><a href="/auth/google"></a>Login with Google</li>
             default:
-                return <li><a></a>Logout</li>;
+                return <li><a href="/api/logout"></a>Logout</li>;
         }
     }
     render() {
         return (
             <Fragment>
                 <Navbar color="faded" light expand="md">
-                    <NavbarBrand href="/">
+                    <NavLink
+                        href={this.props.auth ? "/surveys" : "/"}>
                         Email Feedback
-                </NavbarBrand>
+                </NavLink>
                     <Nav className="ml-auto" navbar>
                         <NavItem className="d-flex align-items-center">
                             <NavLink className="font-weight-bold" href="/">Home</NavLink>
@@ -36,7 +38,7 @@ class Header extends Component {
                         </NavItem>
                     </Nav>
                 </Navbar>
-            </Fragment>
+            </Fragment >
         );
     }
 }
