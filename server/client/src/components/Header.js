@@ -8,15 +8,14 @@ import {
 
 class Header extends Component {
     renderContent() {
+        console.log(this.props)
         switch (this.props.auth) {
             case null:
                 return;
             case false:
-                return (
-                    <li><a href = "/auth/google"></a>Login with Google</li>
-                )
+                return <li><a href = "localhost:3000/auth/google"></a>Login with Google</li>
             default:
-                return <li><a>Logout</a></li>;
+                return <li><a></a>Logout</li>;
         }
     }
     render() {
@@ -33,7 +32,7 @@ class Header extends Component {
                         <NavItem className="d-flex align-items-center">
                             <NavLink className="font-weight-bold" href="">
                                 {this.renderContent()}
-                    </NavLink>
+                            </NavLink>
                         </NavItem>
                     </Nav>
                 </Navbar>
