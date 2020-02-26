@@ -1,4 +1,5 @@
 // PRODUCTION KEYS HERE
+// APIs INCLUDED: GOOGLE AUTH, MONGODB, STRIPE
 
 module.exports = {
     googleClientID: process.env.GOOGLE_CLIENT_ID,
