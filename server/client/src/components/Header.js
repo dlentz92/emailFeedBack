@@ -22,9 +22,7 @@ class Header extends Component {
         <div className="nav-wrapper">
           <a href="#" className="brand-logo">Email Feedback</a>
           <ul id="nav-mobile" className="right hide-on-med-and-down right">
-            <li><a href="">Login With Google</a></li>
-            <li><a href="">Components</a></li>
-            <li><a href="">JavaScript</a></li>
+            <li>{this.renderContent()}</li>
           </ul>
         </div>
       </nav>
